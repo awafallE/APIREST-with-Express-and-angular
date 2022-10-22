@@ -1,0 +1,11 @@
+La liste des users
+
+<mat-card class="example-card" *ngFor=" let user of userList$ | async">
+  <mat-card-header>
+    <mat-card-title>Nom:{{user.firstname}}  </mat-card-title>
+    <mat-card-title>Prenom:{{user.lastname}} </mat-card-title>
+    <mat-card-subtitle>Adresse:{{user.address}}</mat-card-subtitle>
+   
+  </mat-card-header>
+ 
+</mat-card>
