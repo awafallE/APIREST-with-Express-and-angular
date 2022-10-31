@@ -1,6 +1,7 @@
 const express=require('express');
 const { ajoutProduit, getProduits, getProduitId, modifierProduit, deleteProduit } = require('../controller/produit');
-const router=express.Router();
+const router = express.Router();
+//definr les routes de poits de terminaisons
 router.route("/product").post(ajoutProduit);
 router.route("/products").get(getProduits);
 router.route("/product/:id").get(getProduitId);

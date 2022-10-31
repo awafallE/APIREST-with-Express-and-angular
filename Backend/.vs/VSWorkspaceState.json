@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Bd",
     "\\controller",
     "\\model",
     "\\route"
   ],
+  "SelectedNode": "\\teamx.js",
   "PreviewInSolutionExplorer": false
 }

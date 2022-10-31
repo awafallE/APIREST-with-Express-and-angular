@@ -2,17 +2,20 @@ const { Produit } = require("../model/produit");
 const { ObjectID } = require("bson");
 //stocker dans la base
 const client=require("../Bd/connect");
-
+//assigner a notre variable une fonction asynchrone pour renvoyer une promesse
 const ajoutProduit=async(req,res)=>{
     try {
+        //instance de produit tt ce qui vient dans la partie client c dans req avec sa propritei body
         let produit=new Produit(req.body.name,req.body.price,req.body.quantity,req.body.image);
       let result= await client
       .bd()
-      .collection("produits")
-      .insertOne(produit);
+      .collection("produits")//nom de la collection
+            .insertOne(produit);//va ajouter un document dans la collection
+        //envoie la reponse dous forme json
       res.status(200).json(result);
     } catch (error) {
         console.log(error);
+        //le 500 signifie c'est un blem serveur
         res.status(500).json(error);
     }
 };
